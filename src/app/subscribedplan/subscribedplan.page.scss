@@ -1,0 +1,19 @@
+.background{--background: #054937;}
+ion-title{
+
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+    
+  }
+  #left{height: 20px; width: 20px;float: left;
+    color: rgb(255, 255, 255);}
+#power{height: 20px; width: 20px;float: left;float: right;}
+
+ion-tab-bar{--background: #054937;}
+ion-icon{color: black;}
+#body{
+  background-image: url(/assets/bg.jpg);
+  height: 100%;
+  background-size: cover;
+}

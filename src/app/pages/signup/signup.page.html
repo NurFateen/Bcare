@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div align="center"><br>
+        <img height="60px" src="assets/font.png" alt="">
+      </div><br>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background"><br><br>
+  
+  
+  <ion-label class="createacc">Create your account</ion-label><br><br>
+
+  <ion-card class="secbkrnd">
+    <ion-card-header>
+      <ion-col size="8">
+        
+        <!-- Company as a username -->
+        <ion-item>
+          <ion-label position="stacked">Company</ion-label>
+          <ion-input type="text" placeholder="Enter Company name"></ion-input>
+        </ion-item>
+
+          <!-- Address -->
+          <ion-item>
+            <ion-label position="stacked">Address</ion-label>
+            <ion-input type="text" placeholder="Enter company address"></ion-input>
+          </ion-item>
+
+          <!-- Upload MOH certificate -->
+          <ion-label>BUSINESS CERTIFICATE: </ion-label>
+          <ion-button>Upload</ion-button><br>
+          
+          
+        <!-- signup and password from auth-form.component.html -->
+        <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Next'"></app-auth-form>
+
+  <ion-label  class="haveacc" expand="block" fill="clear" routerLink="/login">
+    I already have an account
+  </ion-label>
+
+  </ion-col>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

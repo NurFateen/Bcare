@@ -1,0 +1,68 @@
+.background{--background: #054937;}
+
+ion-title{
+    text-align: center;
+    color: rgb(255, 221, 110);
+    font-family:'Times New Roman', Times, serif;
+    float: left;
+}
+.logo{text-align: center;}
+body{background-color: #054937;}
+
+#rec{
+    background-color: #258D72;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 20px;
+}
+
+#head{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: medium;
+    color: gold;
+}
+
+.basic{
+    text-align: center;
+    font-size: small;
+    margin-bottom: 1px;
+    color: aliceblue;
+}
+
+#base{margin-bottom: 30px;}
+
+.standard{
+    text-align: center;
+    font-size: small;
+    margin-bottom: 1px;
+    color: aliceblue;
+}
+
+#stan{margin-bottom: 30px;}
+
+.premium{
+    text-align: center;
+    font-size: small;
+    margin-bottom: 1px;
+    color: aliceblue;
+}
+
+#pre{margin-bottom: 10px;}
+
+#cp{text-align: center;}
+
+ion-button{--background:#F5F5F5;color: black;}
+
+.check{text-align: center;}
+
+.radio{text-align: center;}
+
+label{font-size: small;}
+
+#left{height: 20px; width: 20px;float: left;
+    color: rgb(255, 255, 255);}
+#power{height: 20px; width: 20px;float: left;float: right;}
+
+ion-tab-bar{--background: #054937;}
+ion-icon{color: black;}

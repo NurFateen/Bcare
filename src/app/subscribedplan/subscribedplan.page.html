@@ -1,0 +1,58 @@
+<ion-header translucent="true">
+  
+  <ion-toolbar class="background">
+    <ion-grid>
+
+<ion-row>
+  
+  <ion-col>
+    <ion-icon id="left" name="chevron-back-outline" (click)="previous()"></ion-icon>
+   </ion-col>
+
+  <ion-col> 
+    <ion-title ></ion-title>
+</ion-col>
+
+<ion-col>
+<ion-icon id="power" name="power-outline"></ion-icon>
+</ion-col>
+
+    </ion-row>
+
+   </ion-grid>
+   </ion-toolbar>
+   </ion-header>
+
+   <ion-content>
+    <div id="body">
+    <img src="assets/click.png" alt="succeedlogo" style="width:100%;">
+    
+      <div class="ion-text-center">
+      SUBSCRIPTION PLAN IS UPDATED
+      </div>
+      </div>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+    <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="camera">
+        <ion-icon name="camera"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="speakers">
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="back" (click)="previous()">
+        <ion-icon name="return-up-back-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  </ion-toolbar>
+  </ion-footer>

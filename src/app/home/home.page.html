@@ -1,0 +1,71 @@
+<ion-header>
+   
+  <ion-toolbar color="secondary">
+    <ion-title>Beautycare</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div> <ion-card>
+  <ion-card-header>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="8">
+     
+    <h1>Welcome to Vendor Page</h1>
+ 
+    </ion-col>
+  </ion-row>
+  </ion-card-header>  
+
+</ion-card></div>
+ <br>
+  <div >
+    <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-button slot="start"color="light" size="large" defaultHref="home/upload-product"><ion-icon name="scan-circle-outline"></ion-icon><ion-label>Scan</ion-label></ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button slot="start"color="light" size="large"><ion-icon name="scan-circle-outline"></ion-icon><ion-label>Subscribed Plan</ion-label></ion-button> <br>
+      </ion-item>
+      <ion-item>
+        <ion-button slot="start"color="light" size="large"><ion-icon name="stats-chart-outline"></ion-icon>Customer Reviews</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button slot="start"color="light" size="large"><ion-icon name="chatbox-ellipses-outline"></ion-icon><ion-label>FAQ</ion-label></ion-button>
+      </ion-item>
+    </ion-list>
+  
+  </ion-card>
+   
+   
+  </div>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+        <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button tab="camera">
+        <ion-icon name="camera-outline"></ion-icon>
+        <ion-label>Camera</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="person">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

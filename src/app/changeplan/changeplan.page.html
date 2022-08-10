@@ -1,0 +1,102 @@
+<ion-header translucent="true">
+  
+  <ion-toolbar class="background">
+    <ion-grid>
+
+<ion-row>
+  
+    <ion-col>
+      <ion-icon id="left" name="chevron-back-outline" (click)="previous()"></ion-icon>
+     </ion-col>
+
+    <ion-col> 
+      <ion-title ></ion-title>
+  </ion-col>
+
+<ion-col>
+  <ion-icon id="power" name="power-outline"></ion-icon>
+</ion-col>
+
+    </ion-row>
+
+   </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <body>
+<div class="logo"><img src="assets/font.png" alt=""></div>
+
+  <div id="rec">
+<div id="head">CHOOSE YOUR PLAN</div>
+
+
+<!-- basic plan -->
+<div class="basic" style="color:gold">BASIC PLAN</div>
+
+<!-- radio -->
+<div class="radio"><label>Choose</label><input type="radio" id="basicplan" name="a1" value="bp"></div>
+
+<div class="basic">$10.00/month</div>
+<div class="basic">20 products</div>
+<div class="basic">Revenue up to $150</div>
+<div class="basic" id="base">5% transaction fee</div>
+
+
+
+<!-- standard plan -->
+<div class="standard" style="color:gold">STANDARD PLAN</div>
+
+<!-- radio -->
+<div class="radio"><label>Choose</label><input type="radio" id="standardplan" name="a1" value="sp"></div>
+
+<div class="standard">$20 products</div>
+<div class="standard">50 products</div>
+<div class="standard">Revenue up to $500</div>
+<div class="standard" id="stan">5% transction fee</div>
+
+
+
+<!-- premium plan -->
+<div class="premium" style="color:gold">PREMIUM PLAN</div>
+
+<!-- radio -->
+<div class="radio"><label>Choose</label><input type="radio" id="premiumplan" name="a1" value="pp"></div>
+
+<div class="premium">$50 products</div>
+<div class="premium">200 products</div>
+<div class="premium">Revenue up to $1000</div>
+<div class="premium" id="pre">5% transction fee</div>
+
+<div id="cp">
+<ion-button (click)="changeplan()">CHANGE PLAN</ion-button>
+</div>
+
+</div>
+</body>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="camera">
+      <ion-icon name="camera"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="back" (click)="previous()">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
+</ion-footer>
