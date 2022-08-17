@@ -3,7 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { 
+    path: '', 
+    redirectTo: 'welcome', 
+    pathMatch: 'full' },
   {
     path: 'home',
     loadChildren: () =>
@@ -41,22 +44,7 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
-  {
-    path: 'cust-home',
-    loadChildren: () => import('./cust-home/cust-home.module').then( m => m.CustHomePageModule)
-  },
-  {
-    path: 'cust-faq',
-    loadChildren: () => import('./cust-faq/cust-faq.module').then( m => m.CustFaqPageModule)
-  },
-  {
-    path: 'cust-home',
-    loadChildren: () => import('./cust-home/cust-home.module').then( m => m.CustHomePageModule)
-  },
-  {
-    path: 'cust-profile',
-    loadChildren: () => import('./cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
-  },
+  
   {
     path: 'upload-product',
     loadChildren: () => import('./upload-product/upload-product.module').then( m => m.UploadProductPageModule)
@@ -104,6 +92,14 @@ const routes: Routes = [
   {
     path: 'subscribedplan',
     loadChildren: () => import('./subscribedplan/subscribedplan.module').then( m => m.SubscribedplanPageModule)
+  },
+  {
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then( m => m.CustomerPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./customer/tabs/tabs.module').then( m => m.TabsPageModule)
   },
 
 ];
