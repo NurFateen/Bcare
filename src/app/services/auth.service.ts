@@ -31,7 +31,24 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
+  Custlogin(email: string, password: string): Promise<UserCredential> {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
   async signup (email: string, password: string): Promise<User> {
+    try{
+    const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+    const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
+    await setDoc(userReference, { email }, { merge: true });
+  await sendEmailVerification(newUserCredential.user);
+  return newUserCredential.user;
+
+   } catch (error) {
+      throw error;
+    }
+  }
+
+  async Custsignup (email: string, password: string): Promise<User> {
     try{
     const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
     const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
@@ -59,6 +76,10 @@ export class AuthService {
 
 
   resetPassword(email: string): Promise<void> {
+    return sendPasswordResetEmail(this.auth, email);
+  }
+
+  CustresetPassword(email: string): Promise<void> {
     return sendPasswordResetEmail(this.auth, email);
   }
 

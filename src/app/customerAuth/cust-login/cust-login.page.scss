@@ -1,0 +1,51 @@
+ion-toolbar{
+    --background: #054937;
+}
+
+ion-button, .login{
+    color: black;
+    --background: white;
+    font-family: Roboto Mono;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.background{
+    --background: #054937;
+}
+
+.signin{
+    color: #E3D497;
+    font-family:RobotoMono ;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.donthaveacc{
+    color: white;
+    font-family: RobotoMono;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+ .secbkrnd{
+    background: #258D72;
+    text-align: center;
+}
+
+ion-input{
+    font-family:Roboto Mono;
+    font-size: 18px;
+   
+}
+
+.forgot{
+    color: black;
+}
+
+
+
+

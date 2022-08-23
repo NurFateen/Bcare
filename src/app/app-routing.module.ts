@@ -101,6 +101,23 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./customer/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'cust-login',
+    loadChildren: () => import('./customerAuth/cust-login/cust-login.module').then( m => m.CustLoginPageModule)
+  },
+  {
+    path: 'cust-resetpwd',
+    loadChildren: () => import('./customerAuth/cust-resetpwd/cust-resetpwd.module').then( m => m.CustResetpwdPageModule)
+  },
+  {
+    path: 'cust-signup',
+    loadChildren: () => import('./customerAuth/cust-signup/cust-signup.module').then( m => m.CustSignupPageModule)
+  },
+  {
+    path: 'cust-profile',
+    loadChildren: () => import('./customerAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
+  },
+  
 
 ];
 
