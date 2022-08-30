@@ -81,6 +81,10 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
+  {
+    path: 'livechat',
+    loadChildren: () => import('./livechat/livechat.module').then( m => m.LivechatPageModule)
+  },
  
 
 ];

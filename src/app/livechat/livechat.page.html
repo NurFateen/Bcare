@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>livechat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item formControlName="vendor's plans">
+      <ion-select interface="popover" placeholder="Select plans">
+        <ion-select-option value="Basic Plan">Basic Plan</ion-select-option>
+        <ion-select-option value="Standard Plan">Standard Plan</ion-select-option>
+        <ion-select-option value="Premium Plan">Premium Plan</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div>
+    <label for="plans">Plans</label>
+    <select id="plans" name="plans" ngModel>
+      <option *ngFor="let p of plans" [ngValue]="p.id">{{p.name}}</option>
+      <!-- <option value="Basic">Basic Plan</option>
+      <option value="Standard">Standard Plan</option>
+      <option value="Premium">Premium Plan</option> -->
+
+    </select>
+  </div>
+</ion-content>
