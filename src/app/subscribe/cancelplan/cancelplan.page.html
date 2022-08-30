@@ -1,0 +1,62 @@
+<ion-header translucent="true">
+  
+  <ion-toolbar class="background">
+    <ion-grid>
+
+<ion-row>
+  
+  <ion-col>
+    <ion-icon id="left" name="chevron-back-outline" (click)="previous()"></ion-icon>
+   </ion-col>
+
+  <ion-col> 
+    <ion-title >SUBSCRIBED PLAN</ion-title>
+</ion-col>
+
+<ion-col>
+<ion-icon id="power" name="power-outline"></ion-icon>
+</ion-col>
+
+    </ion-row>
+
+   </ion-grid>
+   </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+  <div id="body">
+  <img src="assets/cancelled.png" alt="cancelledlogo" style="width:100% ;">
+  
+    <div class="ion-text-center">
+    CANCELLED PLAN
+    </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="camera">
+      <ion-icon name="camera"></ion-icon>
+      <ion-label>Upload</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
+</ion-footer>

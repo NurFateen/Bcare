@@ -8,6 +8,7 @@ import {
   signOut,
   User,
   UserCredential,
+  sendEmailVerification
 } from '@angular/fire/auth';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -17,7 +18,11 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   public userId: string;
-  constructor(private auth: Auth, private firestore: Firestore) {}
+
+  constructor(
+    private auth: Auth,
+    private firestore: Firestore,
+    ) {}
 
   getUser(): Observable<User> {
     return authState(this.auth);
@@ -27,18 +32,53 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  async signup(email: string, password: string): Promise<User> {
-    try {
-      const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
-      const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
-      await setDoc(userReference, { email }, { merge: true });
-      return newUserCredential.user;
-    } catch (error) {
+  async signup (email: string, password: string): Promise<User> {
+    try{
+    const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+    const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
+    await setDoc(userReference, { email }, { merge: true });
+  await sendEmailVerification(newUserCredential.user);
+  return newUserCredential.user;
+
+   } catch (error) {
       throw error;
     }
   }
 
+  
+
+  async Custsignup (email: string, password: string): Promise<User> {
+    try{
+    const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+    const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
+    await setDoc(userReference, { email }, { merge: true });
+  await sendEmailVerification(newUserCredential.user);
+  return newUserCredential.user;
+
+   } catch (error) {
+      throw error;
+    }
+  }
+
+//original code before verfy to email
+  // async signup(email: string, password: string): Promise<User> {
+  //   try {
+  //     const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+  //     const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
+  //     await setDoc(userReference, { email }, { merge: true });
+  //     return newUserCredential.user;
+      
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
+
+
   resetPassword(email: string): Promise<void> {
+    return sendPasswordResetEmail(this.auth, email);
+  }
+
+  CustresetPassword(email: string): Promise<void> {
     return sendPasswordResetEmail(this.auth, email);
   }
 

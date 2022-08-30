@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header> Personal Information </ion-list-header>
+  </ion-list>
+
+  <!-- Upload profile picture -->
+  <div class="preview">
+    <ion-avatar (click)="changeImage()">
+      <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+      <ng-template #placheolder_avatar>
+        <div class="fallback">
+          <p>Select avatar</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
+
+  <!-- Update username as company name -->
+  <ion-item (click)="updateCustName()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Fullname </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.fullName">
+            {{(userProfile$ | async )?.fullName}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!(userProfile$ | async )?.fullName">
+            <span> Tap here to edit. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <!-- Added phone number-->
+  <ion-item (click)="updateCustPhone()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Phone number: </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.phonenum">
+            {{(userProfile$ | async )?.phonenum}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!(userProfile$ | async )?.phonenum">
+            <span> Tap here to edit. </span>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <!-- update company address -->
+  <ion-item (click)="updateCustAddress()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Address: </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.address">
+            {{(userProfile$ | async )?.address}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!(userProfile$ | async )?.address">
+            <span> Tap here to edit. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+</ion-content>

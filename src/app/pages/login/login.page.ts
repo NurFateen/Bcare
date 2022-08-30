@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  async loginUser(credentials: UserCredential): Promise<void> {
+  async loginUser (credentials: UserCredential): Promise<void> {
     try {
       const userCredential = await this.authService.login(credentials.email, credentials.password);
       this.authService.userId = userCredential.user.uid;

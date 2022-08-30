@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-content>
+    <form action="">
+      
+    <ion-list> 
+
+      <ion-item>
+        <ion-label position="floating">Product Name</ion-label>
+        <ion-input required type="text" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Stock</ion-label>
+        <ion-input required type="number" [(ngModel)]="stock" name="stock"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input required type="number" [(ngModel)]="price" name="price"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea required type="text" [(ngModel)]="description" name="description" rows="4" cols="20"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Ingredient</ion-label>
+        <ion-textarea required type="text" [(ngModel)]="ingredient" name="ingredient" rows="4" cols="20"></ion-textarea>
+      </ion-item> 
+
+      <ion-item>
+        <ion-label position="floating">Category</ion-label>
+        <ion-input required type="text" [(ngModel)]="category" name="category"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">MOH Certificate</ion-label>
+        <ion-input required type="File" [(ngModel)]="filepdf" name="submit"></ion-input>
+      </ion-item>
+          <br><br>
+        <ion-button expand="block" shape="round" (click)="addProduct()">Save</ion-button>
+      </ion-list>
+
+
+
+    </form>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -16,11 +16,25 @@
   <ion-list>
     <ion-list-header> Personal Information </ion-list-header>
   </ion-list>
+
+  <!-- Upload profile picture -->
+  <div class="preview">
+    <ion-avatar (click)="changeImage()">
+      <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+      <ng-template #placheolder_avatar>
+        <div class="fallback">
+          <p>Select avatar</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
+
+  <!-- Update username as company name -->
   <ion-item (click)="updateName()">
     <ion-label>
       <ion-grid>
         <ion-row>
-          <ion-col class="text-left" size="5"> Company name </ion-col>
+          <ion-col class="text-left" size="5"> Company name: </ion-col>
           <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.fullName">
             {{(userProfile$ | async )?.fullName}}
           </ion-col>
@@ -32,11 +46,29 @@
     </ion-label>
   </ion-item>
 
+  <!-- Added -->
+  <ion-item (click)="updatePhone()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Phone number: </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.phonenum">
+            {{(userProfile$ | async )?.phonenum}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!(userProfile$ | async )?.phonenum">
+            <span> Tap here to edit. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <!-- update company address -->
   <ion-item (click)="updateAddress()">
     <ion-label>
       <ion-grid>
         <ion-row>
-          <ion-col class="text-left" size="5"> Address </ion-col>
+          <ion-col class="text-left" size="5"> Address: </ion-col>
           <ion-col class="text-center" size="7" *ngIf="(userProfile$ | async )?.address">
             {{(userProfile$ | async )?.address}}
           </ion-col>
@@ -48,7 +80,15 @@
     </ion-label>
   </ion-item>
 
-  <ion-item (click)="updateEmail()">
+  <ion-item>
+    <input type="file" accept="image/*" capture="camera" id="cameraInput">
+<ion-button  onclick="uploadPDF()" name="submit">
+  Upload File
+</ion-button>
+  </ion-item>
+
+  <!-- update email -->
+  <!-- <ion-item (click)="updateEmail()">
     <ion-label>
       <ion-grid>
         <ion-row>
@@ -62,9 +102,10 @@
         </ion-row>
       </ion-grid>
     </ion-label>
-  </ion-item>
+  </ion-item> -->
 
-  <ion-item (click)="updatePassword()">
+  <!-- update password -->
+  <!-- <ion-item (click)="updatePassword()">
     <ion-label>
       <ion-grid>
         <ion-row>
@@ -75,5 +116,5 @@
         </ion-row>
       </ion-grid>
     </ion-label>
-  </ion-item>
+  </ion-item> -->
 </ion-content>

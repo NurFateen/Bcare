@@ -1,79 +1,9 @@
-<ion-header color="primary">
-  <ion-toolbar color="primary">
-    <ion-img  id="bcare" src ="assets/font.png"></ion-img>
-    <ion-buttons slot="end">
-      <ion-fab-button size="small" color="white">
-        <ion-icon name="notifications-outline" color="primary"></ion-icon>
-      </ion-fab-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cust-homepage</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="tertiary" class="ion-padding">
-
-  <ion-searchbar class="ion-margin-bottom" placeholder="Search your product..." color="white" debounce="800"></ion-searchbar>
-<swiper #swiper  [config]="swiperA">
-  <ng-template swiperSlide>
-    <div><img src="assets/product/ads1.jpg"></div>
-  </ng-template>
-  <ng-template swiperSlide>
-    <div><img src="assets/product/ads2.jpg"></div>
-  </ng-template>
-  <ng-template swiperSlide>
-    <div><img src="assets/product/ads3.jpg"></div>
-  </ng-template>
-</swiper>
-
-  <ion-row class="ion-margin-top">
-    <ion-label class="ion-margin-start heading">Categories</ion-label>
-    <swiper [config]="config" effect="fade">
-      <ng-template swiperSlide *ngFor="let category of categories">
-        <ion-card>
-          <ion-item lines="none">
-            <ion-thumbnail slot="start">
-              <img [src]="category?.image" />
-            </ion-thumbnail>
-            <ion-label class="ion-text-wrap">{{category?.name}}</ion-label>
-          </ion-item>
-        </ion-card>
-      </ng-template>
-    </swiper>
-  </ion-row>
-
-  <ion-row class="ion-margin-top">
-    <ion-col size="10">
-      <ion-label class="ion-margin-start heading">
-        RECOMMENDED FOR YOU
-      </ion-label>
-    </ion-col>
-    
-    <swiper [config]="config1" effect="fade">
-      <ng-template swiperSlide *ngFor="let product of products">
-        <ion-card class="location-card">
-          <div>
-            <img [src]="product?.image" />
-            <ion-chip class="ion-padding">
-              <ion-label color="white">BND {{product?.price}}</ion-label>
-            </ion-chip>
-          </div>
-          <ion-item lines="none">            
-            <ion-label class="ion-text-wrap">
-              <ion-text class="title">{{product?.name}}</ion-text>
-              <p>
-                <ion-text color="medium">
-                  {{product?.category}}
-                </ion-text>
-              </p>
-            </ion-label>
-            <ion-fab-button size="small" slot="end" color="white">
-              <ion-icon name="heart-outline" color="medium"></ion-icon>
-            </ion-fab-button>
-            
-          </ion-item>
-          <ion-button class="ion-align-items-baseline">Quick View</ion-button>
-        </ion-card>
-      </ng-template>
-    </swiper>
-  </ion-row>
+<ion-content>
 
 </ion-content>

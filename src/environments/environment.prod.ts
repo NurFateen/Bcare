@@ -10,5 +10,15 @@ export const environment = {
     messagingSenderId: '135520417062',
     measurementId: 'G-T0BL3YPYBQ',
   },
+  // firebaseConfig : {
+  //   apiKey: "AIzaSyC63PC3yES4VTHCYcHn3c2EttZgJ4muvG8",
+  // authDomain: "beautycare-2fd4f.firebaseapp.com",
+  // databaseURL: "https://beautycare-2fd4f-default-rtdb.asia-southeast1.firebasedatabase.app",
+  // projectId: "beautycare-2fd4f",
+  // storageBucket: "beautycare-2fd4f.appspot.com",
+  // messagingSenderId: "135520417062",
+  // appId: "1:135520417062:web:0626ca22d3521ed5aa7de7",
+  // measurementId: "G-T0BL3YPYBQ"
+  // },
   production: true
 };

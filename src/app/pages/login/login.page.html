@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
       <div align="center">
         <img height="60px" src="assets/font.png" alt="">
       </div>
@@ -17,13 +20,17 @@
     <ion-card-header>
       <ion-col size="8">
         <ion-label class="signin">SIGN IN</ion-label>
-  <app-auth-form shape="round" class="login" #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Login'"></app-auth-form>
-
+  <app-auth-form shape="round" class="login" #loginForm (formSubmitted)="loginUser($event)"  [actionButtonText]="'Login as Vendor'"></app-auth-form>
   <ion-label class="donthaveacc" expand="block" fill="clear" routerLink="/signup">
     Don't have an account? Sign Up
   </ion-label><br><br>
 
-  <ion-button shape="round" expand="block" fill="clear" routerLink="/reset-password">
+  <ion-button
+  shape="round"
+  expand="block"
+  color="warning"
+  routerLink="/reset-password"
+  class="forgot">
     I forgot my password :(
   </ion-button>
       </ion-col>

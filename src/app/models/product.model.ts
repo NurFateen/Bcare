@@ -1,10 +1,13 @@
-export interface Product{
-    id: number;
+export interface Product {
+
+    productId: string;
     name: string;
+    stock: number;
     price: number;
     description: string;
     ingredient: string;
-    imageUrl: string;
-    liked: boolean;
-
+    category: string;
+    filepdf: File;
+    createdAt: number;
+    status: string;
 }

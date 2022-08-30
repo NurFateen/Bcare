@@ -18,7 +18,7 @@ export class WelcomePage implements OnInit {
 }
 
 guest(){
-  this.router.navigate(['/about-us']);
+  this.router.navigate(['/cust-login']);
 }
 
 }

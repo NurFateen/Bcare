@@ -2,17 +2,12 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth.guard';
 
+
 const routes: Routes = [
   { 
     path: '', 
     redirectTo: 'welcome', 
     pathMatch: 'full' },
-  {
-    path: 'home',
-    loadChildren: () =>
-      import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuard]
-  },
   {
     path: 'login',
     loadChildren: () =>
@@ -31,76 +26,66 @@ const routes: Routes = [
       )
   },
   {
+    path: 'vendor-home',
+    loadChildren: () => import('./vendor-home/vendor-home.module').then( m => m.VendorHomePageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'product-list',
+    loadChildren: () => import('./product-list/product-list.module').then( m => m.ProductListPageModule)
+  },
+  {
     path: 'profile',
     loadChildren: () =>
       import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AuthGuard]
   },
   {
-    path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then( m => m.CustomerPageModule)
   },
   {
-    path: 'about-us',
-    loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
-  },
-  
-  {
-    path: 'upload-product',
-    loadChildren: () => import('./upload-product/upload-product.module').then( m => m.UploadProductPageModule)
-  },
-  {
-    path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
-  },
-  {
-    path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
-  },
-  {
-    path: 'upload-image',
-    loadChildren: () => import('./upload-image/upload-image.module').then( m => m.UploadImagePageModule)
-  },
-  {
-    path: 'cancelplan',
-    loadChildren: () => import('./cancelplan/cancelplan.module').then( m => m.CancelplanPageModule)
-  },
-  {
-    path: 'changeplan',
-    loadChildren: () => import('./changeplan/changeplan.module').then( m => m.ChangeplanPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'payment',
     loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
   },
   {
-    path: 'proceed',
-    loadChildren: () => import('./proceed/proceed.module').then( m => m.ProceedPageModule)
+    path: 'verify-email',
+    loadChildren: () => import('./verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
   },
   {
-    path: 'reg-subscribeplan',
-    loadChildren: () => import('./reg-subscribeplan/reg-subscribeplan.module').then( m => m.RegSubscribeplanPageModule)
+    path: 'proadd',
+    loadChildren: () => import('./proadd/proadd.module').then( m => m.ProaddPageModule)
+  },
+  
+  {
+    path: 'proedit/:productId',
+    loadChildren: () => import('./proedit/proedit.module').then( m => m.ProeditPageModule)
   },
   {
-    path: 'yourplan',
-    loadChildren: () => import('./yourplan/yourplan.module').then( m => m.YourplanPageModule)
+    path: 'subscribe',
+    loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
   },
   {
-    path: 'changeplan',
-    loadChildren: () => import('./changeplan/changeplan.module').then( m => m.ChangeplanPageModule)
+    path: 'cancelplan',
+    loadChildren: () => import('./subscribe/cancelplan/cancelplan.module').then( m => m.CancelplanPageModule)
   },
   {
-    path: 'subscribedplan',
-    loadChildren: () => import('./subscribedplan/subscribedplan.module').then( m => m.SubscribedplanPageModule)
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
   },
   {
-    path: 'customer',
-    loadChildren: () => import('./customer/customer.module').then( m => m.CustomerPageModule)
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
   {
-    path: 'tabs',
-    loadChildren: () => import('./customer/tabs/tabs.module').then( m => m.TabsPageModule)
+    path: 'livechat',
+    loadChildren: () => import('./livechat/livechat.module').then( m => m.LivechatPageModule)
   },
+ 
 
 ];
 

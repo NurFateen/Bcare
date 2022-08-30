@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div align="center">
+        <img height="60px" src="assets/font.png" alt="">
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logo">
+    <img  src="assets/logo.png" alt="">
+  </div>
+  
+  <ion-card class="secbkrnd">
+    <ion-card-header>
+      <ion-col size="8">
+        <ion-label class="signin">SIGN IN</ion-label>
+  <app-auth-form shape="round" class="login" #CustloginForm (formSubmitted)="loginCust($event)"  [actionButtonText]="'Login as Customer'"></app-auth-form>
+  <ion-label class="donthaveacc" expand="block" fill="clear" routerLink="/cust-signup">
+    Don't have an account? Sign Up
+  </ion-label><br><br>
+
+  <ion-button
+  shape="round"
+  expand="block"
+  color="warning"
+  routerLink="/cust-resetpwd"
+  class="forgot">
+    I forgot my password :(
+  </ion-button>
+      </ion-col>
+    </ion-card-header>
+  </ion-card>
+  
+</ion-content>

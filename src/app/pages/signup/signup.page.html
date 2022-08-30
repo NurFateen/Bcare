@@ -15,25 +15,7 @@
 
   <ion-card class="secbkrnd">
     <ion-card-header>
-      <ion-col size="8">
-        
-        <!-- Company as a username -->
-        <ion-item>
-          <ion-label position="stacked">Company</ion-label>
-          <ion-input type="text" placeholder="Enter Company name"></ion-input>
-        </ion-item>
-
-          <!-- Address -->
-          <ion-item>
-            <ion-label position="stacked">Address</ion-label>
-            <ion-input type="text" placeholder="Enter company address"></ion-input>
-          </ion-item>
-
-          <!-- Upload MOH certificate -->
-          <ion-label>BUSINESS CERTIFICATE: </ion-label>
-          <ion-button>Upload</ion-button><br>
-          
-          
+      <ion-col size="8">    
         <!-- signup and password from auth-form.component.html -->
         <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Next'"></app-auth-form>
 
