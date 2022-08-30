@@ -4,7 +4,7 @@ import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
-  { 
+{ 
     path: '', 
     redirectTo: 'welcome', 
     pathMatch: 'full' },
@@ -85,7 +85,27 @@ const routes: Routes = [
     path: 'livechat',
     loadChildren: () => import('./livechat/livechat.module').then( m => m.LivechatPageModule)
   },
+<<<<<<< HEAD
  
+=======
+  {
+    path: 'cust-login',
+    loadChildren: () => import('./customerAuth/cust-login/cust-login.module').then( m => m.CustLoginPageModule)
+  },
+  {
+    path: 'cust-resetpwd',
+    loadChildren: () => import('./customerAuth/cust-resetpwd/cust-resetpwd.module').then( m => m.CustResetpwdPageModule)
+  },
+  {
+    path: 'cust-signup',
+    loadChildren: () => import('./customerAuth/cust-signup/cust-signup.module').then( m => m.CustSignupPageModule)
+  },
+  {
+    path: 'cust-profile',
+    loadChildren: () => import('./customerAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
+  },
+  
+>>>>>>> 306ae7236424aefbea6bd0fd2b2a4d2b8c2c8b85
 
 ];
 

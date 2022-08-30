@@ -18,7 +18,10 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   public userId: string;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 306ae7236424aefbea6bd0fd2b2a4d2b8c2c8b85
   constructor(
     private auth: Auth,
     private firestore: Firestore,
@@ -32,6 +35,13 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
+<<<<<<< HEAD
+=======
+  Custlogin(email: string, password: string): Promise<UserCredential> {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+>>>>>>> 306ae7236424aefbea6bd0fd2b2a4d2b8c2c8b85
   async signup (email: string, password: string): Promise<User> {
     try{
     const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
@@ -45,8 +55,11 @@ export class AuthService {
     }
   }
 
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 306ae7236424aefbea6bd0fd2b2a4d2b8c2c8b85
   async Custsignup (email: string, password: string): Promise<User> {
     try{
     const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);

@@ -9,15 +9,17 @@
 </ion-header>
 
 <ion-content class="background"><br><br>
+  
+  
   <ion-label class="createacc">Create your account</ion-label><br><br>
 
   <ion-card class="secbkrnd">
     <ion-card-header>
       <ion-col size="8">    
         <!-- signup and password from auth-form.component.html -->
-        <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Next'"></app-auth-form>
+        <app-auth-form #CustsignupForm (formSubmitted)=CustsignupUser($event) [actionButtonText]="'Next'"></app-auth-form>
 
-  <ion-label  class="haveacc" expand="block" fill="clear" routerLink="/login">
+  <ion-label  class="haveacc" expand="block" fill="clear" routerLink="/cust-login">
     I already have an account
   </ion-label>
 
