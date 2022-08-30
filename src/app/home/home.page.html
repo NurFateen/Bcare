@@ -1,0 +1,17 @@
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab()">
+  <ion-tab-bar slot="bottom" color="dark">
+    
+    <ion-tab-button tab="product-list">
+      <ion-icon [name]="selectedTab == 'product-list' ? 'product-list' : 'cloud-upload-outline'"></ion-icon>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="vendor-home">
+      <ion-icon [name]="selectedTab == 'vendor-home' ? 'vendor-home' : 'home-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon [name]="selectedTab == 'profile' ? 'profile' : 'person-circle'"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
