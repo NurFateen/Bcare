@@ -19,7 +19,7 @@
   </ion-item>
   <ion-item class="error-message" *ngIf="!authForm.controls['password'].valid
       && authForm.controls['password'].touched && !isPasswordResetPage">
-    <ion-label>Your password needs more than 6 characters or more.</ion-label>
+    <ion-label>Your password needs more than 8 characters or more.</ion-label>
   </ion-item>
 
   <ion-button *ngIf="isSigningupPage" class="submit" size="round" (click)="submitCredentials(authForm)" expand="block" [disabled]="!authForm.valid">

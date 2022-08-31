@@ -32,7 +32,7 @@ export class SignupPage implements OnInit {
       await this.signupForm.hideLoading();
       this.signupForm.handleError(error);
     } window.alert(
-      'Please refresh the page and check your email to verify your account. Thank you!'
+     'Please check your email to verify your account. Thank you!'
     )
   }
 }
