@@ -1,6 +1,17 @@
-ion-list-header {
-  background-color: #ececec;
+.background{--background:  #054937;}
+
+ ion-item, .personalinfo, .scnbkrnd {
+  --background: #258D72;
 }
+
+.personalinfo{
+  color: #E3D497;
+  font-family:RobotoMono ;
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+}
+
 
 .text-center {
   text-align: center;
@@ -27,6 +38,7 @@ ion-avatar {
   margin-top: 50px;
   display: flex;
   justify-content: center;
+
 }
  
 .fallback {
@@ -34,9 +46,14 @@ ion-avatar {
   height: 128px;
   border-radius: 50%;
   background: #bfbfbf;
- 
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 500;
+}
+ion-title,h1{
+  text-align: center;
+  color: rgb(255, 221, 110);
+  font-family:'Times New Roman', Times, serif;
+  
 }

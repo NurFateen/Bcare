@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar class="background">
+    <ion-buttons  slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Edit Profile</ion-title>
@@ -12,10 +12,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header> Personal Information </ion-list-header>
-  </ion-list>
+<ion-content class="background">
+
+  <ion-item  class="personalinfo">
+    <ion-label>Personal Information</ion-label>
+  </ion-item>
 
   <!-- Upload profile picture -->
   <div class="preview">
@@ -27,8 +28,11 @@
         </div>
       </ng-template>
     </ion-avatar>
-  </div>
+  </div><br>
 
+<ion-card class="scnbkrnd">
+    <ion-card-header>
+      <ion-col size="10">
   <!-- Update username as company name -->
   <ion-item (click)="updateName()">
     <ion-label>
@@ -117,4 +121,9 @@
       </ion-grid>
     </ion-label>
   </ion-item> -->
+</ion-col>
+</ion-card-header>
+</ion-card>
+  
+   
 </ion-content>

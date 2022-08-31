@@ -45,8 +45,6 @@ export class AuthService {
     }
   }
 
-  
-
   async Custsignup (email: string, password: string): Promise<User> {
     try{
     const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
