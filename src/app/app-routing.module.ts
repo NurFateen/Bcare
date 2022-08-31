@@ -85,7 +85,23 @@ const routes: Routes = [
     path: 'livechat',
     loadChildren: () => import('./livechat/livechat.module').then( m => m.LivechatPageModule)
   },
- 
+  {
+    path: 'cust-login',
+    loadChildren: () => import('./customer/tabs/custAuth/cust-login/cust-login.module').then( m => m.CustLoginPageModule)
+  },
+  {
+    path: 'cust-resetpwd',
+    loadChildren: () => import('./customer/tabs/custAuth/cust-resetpwd/cust-resetpwd.module').then( m => m.CustResetpwdPageModule)
+  },
+  {
+    path: 'cust-signup',
+    loadChildren: () => import('./customer/tabs/custAuth/cust-signup/cust-signup.module').then( m => m.CustSignupPageModule)
+  },
+  {
+    path: 'cust-profile',
+    loadChildren: () => import('./customer/tabs/custAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
+  },
+  
 
 ];
 

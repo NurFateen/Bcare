@@ -6,14 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { UserProfile } from '../../models/user';
 import { map, catchError, switchMap, tap, concatMap, first } from 'rxjs/operators';
 import { EMPTY, forkJoin, from, Observable } from 'rxjs';
-import {
-  getDownloadURL,
-  ref,
-  Storage,
-  uploadString,
-} from '@angular/fire/storage';
-
-//need to install using this command: npm i @capacitor/camera @capacitor/filesystem
+import { getDownloadURL, ref, Storage, uploadString, } from '@angular/fire/storage';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 @Injectable({
