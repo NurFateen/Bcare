@@ -20,10 +20,7 @@ const routes: Routes = [
     path: 'cust-location',
     loadChildren: () => import('./cust-location/cust-location.module').then( m => m.CustLocationPageModule)
   },
-  {
-    path: 'cust-auth',
-    loadChildren: () => import('./cust-auth/cust-auth.module').then( m => m.CustAuthPageModule)
-  }
+ 
 ];
 
 @NgModule({
