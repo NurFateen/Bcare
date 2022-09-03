@@ -6,7 +6,7 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/database'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClient } from '@angular/common/http';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/services/crud.service'; 
 import { StringLike } from '@firebase/util';
 import {FirebaseTSFirestore} from 'firebasets/firebasetsFirestore/firebaseTSFirestore';
 @Component({

@@ -70,8 +70,16 @@ const routes: Routes = [
     loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
   },
   {
+    path: 'changeplan',
+    loadChildren: () => import('./subscribe/changeplan/changeplan.module').then( m => m.ChangeplanPageModule)
+  },
+  {
     path: 'cancelplan',
     loadChildren: () => import('./subscribe/cancelplan/cancelplan.module').then( m => m.CancelplanPageModule)
+  },
+  {
+    path: 'yourplan',
+    loadChildren: () => import('./subscribe/yourplan/yourplan.module').then( m => m.YourplanPageModule)
   },
   {
     path: 'welcome',
