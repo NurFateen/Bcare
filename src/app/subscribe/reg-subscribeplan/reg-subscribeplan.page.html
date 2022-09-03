@@ -1,13 +1,16 @@
 <ion-header translucent="true">
   
   <ion-toolbar class="background">
+    <ion-buttons  slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-grid>
 
 <ion-row>
   
-    <ion-col>
+    <!-- <ion-col>
       <ion-icon id="left" name="chevron-back-outline" (click)="previous()"></ion-icon>
-     </ion-col>
+     </ion-col> -->
 
     <ion-col> 
       <ion-title ></ion-title>
@@ -75,28 +78,3 @@
 </div>
 </body>
 </ion-content>
-
-
-<ion-footer>
-  <ion-toolbar>
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="camera">
-      <ion-icon name="camera"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="back" (click)="previous()">
-      <ion-icon name="return-up-back-outline"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
-</ion-toolbar>
-</ion-footer>

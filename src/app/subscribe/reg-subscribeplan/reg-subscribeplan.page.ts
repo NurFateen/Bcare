@@ -20,9 +20,9 @@ export class RegSubscribeplanPage implements OnInit {
     this.router.navigate(['/login']);
   }
   
-  previous(){
-    this.router.navigate(['/signup']);
-    }
+  // previous(){
+  //   this.router.navigate(['/signup']);
+  //   }
 
 
     //Notification for successfully register

@@ -90,6 +90,10 @@ const routes: Routes = [
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
   {
+    path: 'reg-subscribeplan',
+    loadChildren: () => import('./subscribe/reg-subscribeplan/reg-subscribeplan.module').then( m => m.RegSubscribeplanPageModule)
+  },
+  {
     path: 'livechat',
     loadChildren: () => import('./livechat/livechat.module').then( m => m.LivechatPageModule)
   },

@@ -3,21 +3,16 @@
 <ion-header translucent="true">
   
   <ion-toolbar class="background">
+    <ion-buttons  slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-grid>
 
 <ion-row>
-  
-    <ion-col>
-      <ion-icon id="left" name="chevron-back-outline" ></ion-icon>
-     </ion-col>
-
     <ion-col> 
       <ion-title >SUBSCRIBED PLAN</ion-title>
   </ion-col>
 
-<ion-col>
-  <ion-icon id="power" name="power-outline"></ion-icon>
-</ion-col>
 
     </ion-row>
 
@@ -60,24 +55,20 @@
 
 <ion-footer>
   <ion-toolbar>
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="camera">
-      <ion-icon name="camera"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="back">
-      <ion-icon name="return-up-back-outline"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/product-list">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/home">
+          <ion-icon name="home"></ion-icon>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/profile">
+          <ion-icon name="person-circle"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
 </ion-toolbar>
 </ion-footer>
