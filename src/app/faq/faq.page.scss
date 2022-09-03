@@ -1,0 +1,24 @@
+ion-title{
+    text-align: center;
+    color: rgb(255, 221, 110);
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+.background{
+    --background: #054937;
+}
+
+ion-content{
+    --background: #258D72;
+}
+
+ion-tab-bar{
+    --background: #054937;
+}
+
+ion-card,ion-item{
+    background-color:  #c3d6d2;
+}

@@ -11,14 +11,20 @@ img{
 }
 
 
-ion-title{float: left;color:aliceblue;font-family: 'Times New Roman', Times, serif}
+ion-title{
+  text-align: center;
+  color: rgb(255, 221, 110);
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 30px;
+  font-size: large;
+  margin-top: 20px;
+  font-size: 20px;
+}
 
 #left{height: 20px; width: 20px;float: left;
   color: rgb(255, 255, 255);}
 #power{height: 20px; width: 20px;float: left;float: right;}
 
-ion-tab-bar{--background: #054937;}
-ion-icon{color: black;}
 
 .background{--background: #054937;}
 div{text-align: center}
@@ -61,3 +67,6 @@ text-align: center;
   height: 100%;
   background-size: cover;
 }
+
+ion-tab-bar{--background: #054937;}
+ion-card,ion-item{background-color:  #c3d6d2;}
