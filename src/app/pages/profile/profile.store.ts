@@ -6,16 +6,18 @@ import { ProfileService } from './profile.service';
 
 export interface ProfileState {
   profilepic: string,
-  fullName: string;
-  address: string;
-  phonenum: string;
-  file: string;
+    fullName: string;
+    address: string;
+    phonenum: string;
+    file: string;
+    name: string;
+    filepath: string;
 }
 
 @Injectable()
 export class ProfileStore extends ComponentStore<ProfileState> {
   constructor(private readonly profileService: ProfileService) {
-    super({profilepic: ' ', fullName: '', address: '', phonenum: '', file:''});
+    super({profilepic: ' ', fullName: '', address: '', phonenum: '', file:'', name:'',filepath:''});
   }
 
   readonly userProfile$: Observable<ProfileState> = this.select(state => state);
