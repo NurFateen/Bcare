@@ -23,7 +23,7 @@ export class CustLoginPage implements OnInit {
       const userCredential = await this.authService.login(credentials.email, credentials.password);
       this.authService.userId = userCredential.user.uid;
       await this.CustloginForm.hideLoading();
-      this.router.navigateByUrl('cust-profile');
+      this.router.navigateByUrl('/customer/tabs/cust-homepage');
     } catch (error) {
       await this.CustloginForm.hideLoading();
       this.CustloginForm.handleError(error);
