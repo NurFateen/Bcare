@@ -22,6 +22,11 @@
       <ion-col size="8">
         <ion-label class="signin">SIGN IN</ion-label>
   <app-auth-form shape="round" class="login" #CustloginForm (formSubmitted)="loginCust($event)"  [actionButtonText]="'Login as Customer'"></app-auth-form>
+  
+  <ion-label class="donthaveacc" expand="block" fill="clear" routerLink="/customer/tabs/cust-homepage">
+    Sign In as Guest
+  </ion-label><br><br>
+
   <ion-label class="donthaveacc" expand="block" fill="clear" routerLink="/cust-signup">
     Don't have an account? Sign Up
   </ion-label><br><br>

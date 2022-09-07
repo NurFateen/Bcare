@@ -1,9 +1,58 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product-details</ion-title>
+    <ion-back-button slot="start" defaultHref="/customer/tabs/cust-homepage"></ion-back-button>
+    <ion-title>Product Details</ion-title>
   </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+  </ion-header>
+  
+  <ion-content>
+    <div class="header">
+      <!-- <ion-buttons> -->
+        <!-- <ion-button [routerLink]="customer/tabs/cust-homepage"> -->
+        <!-- <ion-icon slot="icon-only" color='light' name="arrow-back"></ion-icon> -->
+        <!-- </ion-button> -->
+      <!-- </ion-buttons> -->
+     
+      <!-- <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" color='light' name="d-heart"></ion-icon>
+        </ion-button>
+      </ion-buttons> -->
+    </div>
+  
+    <!-- PRODUCT DETAIL CARD -->
+    <ion-card *ngFor="let product of products">
+      <div class="image" >
+        <ion-img [src]="product.image"></ion-img>
+      </div>
+  
+    
+        
+        <ion-list>
+          <div class="card-title">
+            <ion-item>
+              <h1>Name</h1> 
+                <p >{{product.name}}</p>
+            </ion-item>
+            <ion-item>
+              <h1>Price</h1>
+                <p>${{product.price}}</p>
+            </ion-item>
+          </div>
+  
+    <ion-item>
+      <div class="description">
+        <h1>Description</h1>
+        <p>{{product.description}}</p>
+      </div>
+  </ion-item>
+  <ion-item>
+      <div class="ingredient">
+        <h1>Ingredient</h1>
+        <p>{{product.ingredient}}</p>
+      </div>
+    </ion-item>
+    </ion-list>
+      <!-- <app-button (click)="addItemToCart()">Add to Cart</app-button> -->
+    </ion-card>
+  </ion-content>
