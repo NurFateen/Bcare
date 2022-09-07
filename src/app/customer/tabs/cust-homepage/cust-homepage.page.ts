@@ -1,7 +1,6 @@
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
 // import { Product } from 'src/app/product/product.model';
 // import { ProductService } from 'src/app/product/product.service';
 import { Product } from 'src/app/models/product.model';
@@ -16,8 +15,11 @@ SwiperCore.use([EffectFade]);
   selector: 'app-cust-homepage',
   templateUrl: './cust-homepage.page.html',
   styleUrls: ['./cust-homepage.page.scss'],
+  providers: [ProductService]
 })
 export class CustHomepagePage implements OnInit, AfterContentChecked {
+
+
   swiperA: SwiperOptions={
     pagination:true,
     slidesPerView: 'auto',
@@ -25,22 +27,63 @@ export class CustHomepagePage implements OnInit, AfterContentChecked {
   config: SwiperOptions;
   config1: SwiperOptions;
   categories: any[] = [];
-  products: Product[] = [];
+  products: Product[];
+
+  // name: string;
+  // stock: number;
+  // price: number;
+  // category: string;
 
   constructor(
     private productService: ProductService,
-    // private loadingCtrl: LoadingController,
     private router: Router,
-    // private toastr: ToastController, 
-    // private afs: AngularFirestore
+    // private toastr: ToastController
   ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     Swiper.use([Pagination]);
     this.productService.getProducts().subscribe(products => {
       this.products = products;
     });
   }
+
+ view(productId) {
+    this.router.navigate(['/cust-details', productId]);
+  }
+
+  ngAfterContentChecked() {
+    this.config = {
+      slidesPerView: 2.1
+    };
+    this.config1 = {
+      slidesPerView: 2
+    };
+  }
+  
+  // async wishProduct(){
+  //   if(this.name && this.stock && this.price && this.category){
+  //     const loading = await this.loadingCtrl.create({
+  //       message: 'add to wish..',
+  //       spinner: 'crescent',
+  //       showBackdrop: true
+  //     });
+  //     loading.present();
+
+  //     const productId = this.afs.createId();
+
+  //     this.afs.collection('product').doc(productId).set({
+  //       'productId': productId,
+  //       'name': this.name,
+  //       'stock': this.stock,
+  //       'price': this.price,
+  //       'category': this.category,
+  //     })
+  //     .then(()=> {
+  //       loading.dismiss();
+  //       this.router.navigate(['/customer/wishlist']);
+  //     })
+  //   }
+  // }
   // ngOnInit() {
   //   Swiper.use([Pagination]);
     
@@ -142,18 +185,7 @@ export class CustHomepagePage implements OnInit, AfterContentChecked {
   //   ];
   // }
   
-  ViewProduct(productId: string) {
-    this.router.navigate(['/product-detail', productId]);
-  }
-
-  ngAfterContentChecked() {
-    this.config = {
-      slidesPerView: 2.1
-    };
-    this.config1 = {
-      slidesPerView: 2
-    };
-  }
+ 
   
 
 }
