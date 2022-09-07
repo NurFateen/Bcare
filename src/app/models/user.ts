@@ -10,6 +10,8 @@ export interface UserCredential {
     address: string;
     phonenum: string;
     file: string;
+    name: string;
+    filepath: string;
   }
   
   

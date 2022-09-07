@@ -5,9 +5,18 @@ import { AlertController, LoadingController } from '@ionic/angular';
 import { UserProfile } from 'src/app/models/user';
 import { ProfileService } from './profile.service';
 import { Observable, Subscription } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
+import { first, finalize, tap } from 'rxjs/operators';
 import { ProfileStore } from './profile.store';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { AngularFireStorage, AngularFireUploadTask, } from '@angular/fire/compat/storage';
+import { AngularFirestore, AngularFirestoreCollection,} from '@angular/fire/compat/firestore';
+import { Auth } from '@angular/fire/auth';
+
+export interface FILE {
+  name: string;
+  filepath: string;
+  size: number;
+}
 
 @Component({
   selector: 'app-profile',
@@ -15,11 +24,30 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
   styleUrls: ['./profile.page.scss'],
   providers: [ProfileStore],
 })
+
 export class ProfilePage {
   profile = null;
-
   public userProfile$: Observable<UserProfile> = this.profileStore.userProfile$;
   private userProfileSubscription: Subscription;
+
+  // for upload pdf to firestore
+  ngFireUploadTask: AngularFireUploadTask;
+
+  progressNum: Observable<number>;
+
+  progressSnapshot: Observable<any>;
+
+  fileUploadedPath: Observable<string>;
+
+  files: Observable<FILE[]>;
+
+  FileName: string;
+  FileSize: number;
+
+  isImgUploading: boolean;
+  isImgUploaded: boolean;
+
+  private ngFirestoreCollection: AngularFirestoreCollection<FILE>;
   
   constructor(
     private authService: AuthService,
@@ -28,12 +56,21 @@ export class ProfilePage {
     private alertCtrl: AlertController,
     private readonly profileStore: ProfileStore,
     private loadingController: LoadingController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private angularFirestore: AngularFirestore,
+    private angularFireStorage: AngularFireStorage,
+   
   ) {
     this.profileService.getUserProfile()
     .subscribe((data) => {
       this.profile = data;
     });
+
+    // upload pdf to firestore
+    this.isImgUploading = false;
+    this.isImgUploaded = false;
+    this.ngFirestoreCollection = angularFirestore.collection<FILE>('MohCertificate');
+    this.files = this.ngFirestoreCollection.valueChanges();
   }
 
   ngOnInit(): void {
@@ -46,6 +83,59 @@ export class ProfilePage {
     this.userProfileSubscription?.unsubscribe();
   }
 
+  fileUpload(event: FileList) {
+      
+    const file = event.item(0)
+
+    if (file.type == 'pdf') { 
+      console.log('File type is not supported!')
+      return;
+    }
+
+    this.isImgUploading = true;
+    this.isImgUploaded = false;
+
+    this.FileName = file.name;
+
+    const fileStoragePath = `MohCertificate/${new Date().getTime()}_${file.name}`;
+
+    const imageRef = this.angularFireStorage.ref(fileStoragePath);
+
+    this.ngFireUploadTask = this.angularFireStorage.upload(fileStoragePath, file);
+
+    this.progressNum = this.ngFireUploadTask.percentageChanges();
+    this.progressSnapshot = this.ngFireUploadTask.snapshotChanges().pipe(
+      
+      finalize(() => {
+        this.fileUploadedPath = imageRef.getDownloadURL();
+        
+        this.fileUploadedPath.subscribe(resp=>{
+          this.fileStorage({
+            name: file.name,
+            filepath: resp,
+            size: this.FileSize
+          });
+          this.isImgUploading = false;
+          this.isImgUploaded = true;
+        },error => {
+          console.log(error);
+        })
+      }),
+      tap(snap => {
+          this.FileSize = snap.totalBytes;
+      })
+    )
+}
+
+fileStorage(image: FILE) {
+    const ImgId = this.angularFirestore.createId();
+    
+    this.ngFirestoreCollection.doc(ImgId).set(image).then(data => {
+      console.log(data);
+    }).catch(error => {
+      console.log(error);
+    });
+}   
   async changeImage() {
     const image = await Camera.getPhoto({
       quality: 90,

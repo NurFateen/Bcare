@@ -1,0 +1,31 @@
+ion-title{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+ion-toolbar{
+    --background:  #054937;
+}
+
+.personalinfo{
+    color: #E3D497;
+    font-family:RobotoMono ;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    --background: #258D72
+}
+
+ion-content{
+    --background: #c3d6d2;
+}
+
+
+ion-tab-bar{
+    --background: #054937;
+}
+
+ion-card,ion-item{
+    background-color:  #258D72
+}

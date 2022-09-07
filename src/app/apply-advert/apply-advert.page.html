@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-header>
   <ion-toolbar>
     <ion-title>apply-advert</ion-title>
@@ -7,3 +8,151 @@
 <ion-content>
 
 </ion-content>
+=======
+<ion-header [translucent]="true"> 
+  <ion-toolbar class="background"> 
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/home"></ion-back-button> 
+    </ion-buttons> 
+    <ion-title>Apply Advert</ion-title> 
+  </ion-toolbar> 
+</ion-header> 
+   
+ 
+<ion-content [fullscreen]="true"> 
+  <body> 
+    <ion-card> 
+   <ion-list> 
+  <ion-grid> 
+    <ion-row > 
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">  
+        
+          <ion-item > <!--for loop--> 
+          <ion-label position="floating">Advert Title:</ion-label> 
+ 
+          <ion-input required type="advertTitle" name="advertTitle"></ion-input> 
+          </ion-item> 
+      </ion-col> 
+    </ion-row> 
+    
+ 
+    <ion-card class="ion-text-center" *ngIf="!isUploading && !isUploaded"> 
+      <ion-card-header> 
+        <!-- <ion-card-title>Choose Images to Upload</ion-card-title> --> 
+      </ion-card-header> 
+      <ion-card-content> 
+        <ion-button> 
+           
+          <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)" /> 
+        </ion-button> 
+      </ion-card-content> 
+    </ion-card> 
+   
+    <ion-card  *ngIf="isUploading && !isUploaded"> 
+      <ion-card-header> 
+        <ion-card-title>Selected File:<b>{{ fileName }}</b></ion-card-title> 
+      </ion-card-header> 
+   
+      <ion-card-content> 
+        <div *ngIf="percentage | async as pct"> 
+          Progress: {{ pct | number }}% 
+          <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar> 
+        </div> 
+        <div *ngIf="snapshot | async as snap"> 
+          File Size: {{ snap.totalBytes | fileSizePipe }} Transfered: 
+          {{ snap.bytesTransferred | fileSizePipe }}                                                           
+          <div *ngIf="snapshot && snap.bytesTransferred != snap.totalBytes"> 
+            <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Pause</ion-button> 
+            <ion-button size="small" (click)="task.resume()" class="button is-info">Resume</ion-button> 
+            <ion-button color="danger" size="small" (click)="task.cancel()" class="button is-danger">Cancel</ion-button> 
+          </div> 
+        </div> 
+      </ion-card-content> 
+    </ion-card> 
+     
+    <ion-card class="ion-text-center" *ngIf="!isUploading && isUploaded"> 
+      <ion-card-header> 
+        <ion-card-title> 
+          <b>{{ fileName }}</b> Uploaded! 
+        </ion-card-title> 
+      </ion-card-header> 
+   
+      <ion-card-content> 
+        <div *ngIf="UploadedFileURL | async as url"> 
+          <img [src]="url" /> 
+          <a [href]="url" target="_blank" rel="noopener">Download</a> 
+        </div> 
+        File Size: {{ fileSize | fileSizePipe }} 
+        <ion-button expand="full" color="success" (click)="isUploading = isUploaded = false">Upload More</ion-button> 
+      </ion-card-content> 
+    </ion-card> 
+   
+    <!-- <h2 class="ion-text-center">Uploaded Freaky Images</h2> --> 
+   
+    <ion-card color="light" class="ion-text-center" *ngFor="let item of advert | async"> 
+      <ion-card-header> 
+        <ion-card-title> 
+          <!-- {{ item.filepath }} --> 
+        </ion-card-title> 
+      </ion-card-header> 
+   
+      <ion-card-content> 
+        <img [src]="item.filepath" /> 
+        <!-- <a [href]="item.filepath" target="_blank" rel="noopener">Download</a> --> 
+      </ion-card-content> 
+    </ion-card> 
+ 
+    <ion-button id="open-modal" expand="block">Accept Term and conditions</ion-button> 
+    <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement"> 
+      <ng-template> 
+        <ion-header> 
+          <ion-toolbar> 
+            <ion-title>Terms & Conditions</ion-title> 
+            <ion-buttons slot="end"> 
+              <ion-button (click)="modal.dismiss()">Close</ion-button> 
+            </ion-buttons> 
+          </ion-toolbar> 
+        </ion-header> 
+        <ion-content> 
+          <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+          <ion-item> 
+            <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label> 
+            <ion-checkbox id="terms" (ionChange)="onTermsChanged($event)" [checked]="canDismiss"></ion-checkbox> 
+          </ion-item> 
+           
+        </ion-content> 
+      </ng-template> 
+    </ion-modal> 
+ 
+      <ion-button  expand="block">Apply</ion-button> 
+ 
+</ion-grid> 
+</ion-list> 
+</ion-card> 
+ 
+</body> 
+</ion-content> 
+<ion-footer> 
+  <ion-toolbar> 
+    <ion-tabs> 
+      <ion-tab-bar slot="bottom"> 
+         
+     
+        <ion-tab-button routerLink="/product-list"> 
+          <ion-icon name="cloud-upload-outline"></ion-icon> 
+        </ion-tab-button> 
+     
+        <ion-tab-button routerLink="/home"> 
+          <ion-icon name="home"></ion-icon> 
+        </ion-tab-button> 
+     
+        <ion-tab-button routerLink="/profile"> 
+          <ion-icon name="person-circle"></ion-icon> 
+        </ion-tab-button> 
+     
+     
+      </ion-tab-bar> 
+    </ion-tabs> 
+</ion-toolbar> 
+</ion-footer>
+>>>>>>> 680ffb4429459a54e87e4afe92e18f476477ebb0
