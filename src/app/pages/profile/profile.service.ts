@@ -95,7 +95,7 @@ export class ProfileService {
       return null;
     }
   }
-
+  
   updateName(fullName: string): Observable<DocumentReference<DocumentData>> {
     return this.getUserProfileReference().pipe(
       tap({

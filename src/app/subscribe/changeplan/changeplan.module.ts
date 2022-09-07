@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { CrudService } from 'src/app/services/crud.service';
+
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 

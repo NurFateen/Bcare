@@ -1,15 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>FAQ</ion-title>
+  <ion-toolbar class="background">
+    <ion-title>
+      <img  height="60px" src="assets/font.png" alt="">
+    </ion-title>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
-  <ion-col>
-    <div class="ion-text-center">
-      <h2>FREQUENT ASKED QUESTIONS</h2>
-    </div>
-  </ion-col>
+  <ion-item  class="personalinfo">
+    <ion-label>Frequent Ask Question</ion-label>
+  </ion-item><br><br>
+
   <ion-accordion-group>
     <ion-accordion value="first">
       <ion-item slot="header" color="light">
@@ -46,3 +52,23 @@
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/product-list">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/home">
+          <ion-icon name="home"></ion-icon>
+        </ion-tab-button>
+    
+        <ion-tab-button routerLink="/profile">
+          <ion-icon name="person-circle"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+</ion-toolbar>
+</ion-footer>

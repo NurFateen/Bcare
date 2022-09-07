@@ -70,8 +70,16 @@ const routes: Routes = [
     loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
   },
   {
+    path: 'changeplan',
+    loadChildren: () => import('./subscribe/changeplan/changeplan.module').then( m => m.ChangeplanPageModule)
+  },
+  {
     path: 'cancelplan',
     loadChildren: () => import('./subscribe/cancelplan/cancelplan.module').then( m => m.CancelplanPageModule)
+  },
+  {
+    path: 'yourplan',
+    loadChildren: () => import('./subscribe/yourplan/yourplan.module').then( m => m.YourplanPageModule)
   },
   {
     path: 'welcome',
@@ -80,6 +88,10 @@ const routes: Routes = [
   {
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+  },
+  {
+    path: 'reg-subscribeplan',
+    loadChildren: () => import('./subscribe/reg-subscribeplan/reg-subscribeplan.module').then( m => m.RegSubscribeplanPageModule)
   },
   {
     path: 'livechat',
@@ -100,7 +112,11 @@ const routes: Routes = [
   {
     path: 'cust-profile',
     loadChildren: () => import('./customer/tabs/custAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
+  },  {
+    path: 'vendor-customer-reviews',
+    loadChildren: () => import('./vendor-customer-reviews/vendor-customer-reviews.module').then( m => m.VendorCustomerReviewsPageModule)
   },
+
   
 
 ];

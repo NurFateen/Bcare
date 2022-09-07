@@ -12,8 +12,10 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+//import { FormatFileSizePipe } from './pages/profile/format-file-size.pipe';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     provideStorage(() => getStorage()),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase), 
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
+    
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

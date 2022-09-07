@@ -4,8 +4,8 @@ ion-title{
     margin-top: 10px;
   }
 
-.background{
-    --background: #054937;
+ion-toolbar{
+    --background:  #054937;
 }
 
 .personalinfo{
@@ -21,10 +21,11 @@ ion-content{
     --background: #c3d6d2;
 }
 
+
 ion-tab-bar{
     --background: #054937;
 }
 
 ion-card,ion-item{
-    background-color:  #c3d6d2;
+    background-color:  #258D72
 }

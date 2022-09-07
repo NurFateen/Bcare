@@ -1,42 +1,22 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<ion-header translucent="true">
-  
-  <ion-toolbar class="background">
+<ion-header>
+  <ion-toolbar>
     <ion-buttons  slot="start">
-      <ion-back-button defaultHref="/yourplan"></ion-back-button>
+      <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-grid>
-
-<ion-row>
-  
-  <ion-col> 
-    <ion-title >PAYMENT PAGE</ion-title>
-</ion-col>
-
-
-    </ion-row>
-
-   </ion-grid>
-   </ion-toolbar>
-   </ion-header>
+    <ion-title>
+      <img  height="60px" src="assets/font.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
 
+  <ion-item  class="personalinfo">
+    <ion-label>Customer Review</ion-label>
+  </ion-item>
 
-  
-  <div id="body">
-  <h2>{{dataRef?.name}}</h2>
-  <p id="value"  >{{dataRef?.price}}</p>
-  <p>{{dataRef?.reward}}</p>
-
-  
-    
-  <div expand="block" (click)="paypal()" id="myPaypalButtons"></div>
-
-  
-
-</div>
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar>

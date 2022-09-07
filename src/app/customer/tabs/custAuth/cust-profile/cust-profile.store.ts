@@ -10,12 +10,14 @@ export interface ProfileState {
   address: string;
   phonenum: string;
   file: string;
+  name: string;
+  filepath: string;
 }
 
 @Injectable()
 export class CustProfileStore extends ComponentStore<ProfileState> {
   constructor(private readonly CustProfileService: CustProfileService) {
-    super({profilepic: ' ', fullName: '', address: '', phonenum: '', file:''});
+    super({profilepic: ' ', fullName: '', address: '', phonenum: '', file:'', name:'',filepath:''});
   }
 
   readonly userProfile$: Observable<ProfileState> = this.select(state => state);
