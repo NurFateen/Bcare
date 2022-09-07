@@ -9,42 +9,21 @@ img{
     margin-right: auto;
     width: 50%;
 }
-
-
-ion-title{
+*{
   text-align: center;
-  color: rgb(255, 221, 110);
-  font-family:'Times New Roman', Times, serif;
-  margin-bottom: 30px;
-  font-size: large;
-  margin-top: 20px;
-  font-size: 20px;
+  align-items: center;
 }
+
+ion-title{float: left;color:aliceblue;font-family: 'Times New Roman', Times, serif}
 
 #left{height: 20px; width: 20px;float: left;
   color: rgb(255, 255, 255);}
 #power{height: 20px; width: 20px;float: left;float: right;}
 
+ion-tab-bar{--background: #054937;}
+ion-icon{color: black;}
 
 .background{--background: #054937;}
-div{text-align: center}
-/* HIDE RADIO */
-[type=radio] { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* IMAGE STYLES */
-  [type=radio] + img {
-    cursor: pointer;
-  }
-  
-  /* CHECKED STYLES */
-  [type=radio]:checked + img {
-    outline: 2px solid rgb(0, 128, 11);
-  }
 
 *label{padding: 12px 12px 12px 0;
     display: inline-block;}
@@ -59,14 +38,20 @@ ion-label{
   color: black;
 }
 
-#myPaypalButtons{
-text-align: center;
-}
 #body{
   background-image: url(/assets/bg.jpg);
-  height: 100%;
-  background-size: cover;
+  background-size: 100%;
+  
+}
+p{
+  text-align: center;
+}
+img{
+  width: 300px;
 }
 
-ion-tab-bar{--background: #054937;}
-ion-card,ion-item{background-color:  #c3d6d2;}
+ion-modal.stack-modal {
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  
+}

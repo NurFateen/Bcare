@@ -113,6 +113,11 @@ const routes: Routes = [
     path: 'cust-profile',
     loadChildren: () => import('./customer/tabs/custAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
   },
+  {
+    path: 'apply-advert',
+    loadChildren: () => import('./apply-advert/apply-advert.module').then( m => m.ApplyAdvertPageModule)
+  },
+
   
 
 ];

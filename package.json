@@ -36,6 +36,8 @@
     "file-system": "^2.2.2",
     "firebase": "^9.8.3",
     "firebasets": "^1.2.13",
+    "jspdf": "^2.5.1",
+    "nodemailer": "^6.7.8",
     "rxjs": "~6.6.0",
     "swiper": "^8.3.2",
     "tslib": "^2.4.0",

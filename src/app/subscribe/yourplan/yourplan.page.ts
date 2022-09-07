@@ -13,6 +13,7 @@ export class YourplanPage implements OnInit {
   constructor(private router: Router, private alertController:AlertController) {}
 
   async cancel() {
+    
     const alert = await this.alertController.create({
       header: 'Are you sure?',
       buttons: [
@@ -42,6 +43,7 @@ change(){
 pay(){
   this.router.navigate(['/payment']);
 }
+
 
 
 ngOnInit() {

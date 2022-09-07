@@ -5,16 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PaymentPageRoutingModule } from './payment-routing.module';
-
 import { PaymentPage } from './payment.page';
-
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import {FirebaseTSApp} from 'firebasets/firebasetsApp/firebaseTSApp';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PaymentPageRoutingModule
+    PaymentPageRoutingModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
   declarations: [PaymentPage]
 })

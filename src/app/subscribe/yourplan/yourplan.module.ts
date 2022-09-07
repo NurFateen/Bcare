@@ -13,7 +13,8 @@ import { YourplanPage } from './yourplan.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    YourplanPageRoutingModule
+    YourplanPageRoutingModule,
+    
   ],
   declarations: [YourplanPage]
 })
