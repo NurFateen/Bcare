@@ -6,3 +6,14 @@ ion-title{
     font-size: larger;
     margin-top: 20px;
 }
+
+ion-content{
+    --background: #c3d6d2;
+}
+
+ion-toolbar{
+    --background:  #054937;
+}
+
+ion-tab-bar{--background: #054937;}
+ion-card,ion-item{background-color:  #258D72}

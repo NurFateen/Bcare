@@ -16,6 +16,32 @@
     </ion-fab-button>
   </ion-fab>
 
+  <ion-label>Filter</ion-label> 
+    <ion-item > 
+      <ion-select placeholder="Sorting" [multiple]="true"> 
+        <ion-select-option value="Category">A - Z</ion-select-option> 
+        <ion-select-option value="Stock">Z - A</ion-select-option> 
+      </ion-select> 
+ 
+      <ion-select placeholder="Price" [multiple]="true"> 
+        <ion-select-option value="High">High to Low</ion-select-option> 
+        <ion-select-option value="Low">Low to High</ion-select-option> 
+      </ion-select> 
+ 
+      <ion-select placeholder="Stock" [multiple]="true"> 
+        <ion-select-option value="High">High to Low</ion-select-option> 
+        <ion-select-option value="Low">Low to High</ion-select-option> 
+      </ion-select> 
+      <ion-select placeholder="Category" [multiple]="true"> 
+        <ion-select-option value="Moisturiser">Moisturiser</ion-select-option> 
+        <ion-select-option value="Cleanser">Cleanser</ion-select-option> 
+        <ion-select-option value="Serum">Serum</ion-select-option> 
+        <ion-select-option value="Eyecream">Eyecream</ion-select-option> 
+        <ion-select-option value="Mask">Mask</ion-select-option> 
+        <ion-select-option value="Toner">Toner</ion-select-option> 
+      </ion-select> 
+    </ion-item>
+
   <ion-card *ngFor = "let product of listOfproduct">
     <ion-card-header style="text-align: center;">
       <ion-card-title>{{product.name}}</ion-card-title>

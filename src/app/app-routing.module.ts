@@ -112,10 +112,16 @@ const routes: Routes = [
   {
     path: 'cust-profile',
     loadChildren: () => import('./customer/tabs/custAuth/cust-profile/cust-profile.module').then( m => m.CustProfilePageModule)
-  },  {
+  },
+  {
     path: 'vendor-customer-reviews',
     loadChildren: () => import('./vendor-customer-reviews/vendor-customer-reviews.module').then( m => m.VendorCustomerReviewsPageModule)
+  },  {
+    path: 'apply-advert',
+    loadChildren: () => import('./apply-advert/apply-advert.module').then( m => m.ApplyAdvertPageModule)
   },
+
+
 
   
 
